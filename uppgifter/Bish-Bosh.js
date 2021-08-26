@@ -20,7 +20,6 @@ function createBox(id){
 
 // Räknar ut Bish-Bosh och sätter text i elementet
 function bishboshText(id, el){
-    
     let bish = bishRange.value;
     let bosh = boshRange.value;
     if(id%bish==0 && id%bosh==0)
@@ -31,7 +30,6 @@ function bishboshText(id, el){
      el.innerHTML = "<font color='pink'>Bosh</font>"
      else
      el.innerHTML = id;
-    
  }
 
  // skapar lådor vid start (om boxAmount-rangen har ett value)
