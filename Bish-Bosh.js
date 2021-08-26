@@ -46,8 +46,6 @@ boxAmount.oninput=()=>{
     if(grid.childElementCount > boxAmount.value)
         grid.removeChild(grid.lastChild);
 
-    else 
-        return;
     }
 }
 
