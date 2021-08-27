@@ -1,0 +1,23 @@
+:root{
+    --fontColor:#fff;
+}
+html{
+    font-size: 100%;
+}
+body{
+    color:white;
+    font-family: monospace;
+    height:100vh;
+    background-image: linear-gradient(to bottom right, blue, 20%, lightblue);
+}
+ul{
+    list-style: none;
+    li{
+        padding:1em;
+        
+    }
+}
+a{
+    font-size: 2em;
+    color:white;
+}

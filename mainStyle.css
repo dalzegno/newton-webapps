@@ -1,0 +1,29 @@
+:root {
+  --fontColor:#fff;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  color: white;
+  font-family: monospace;
+  height: 100vh;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(blue), color-stop(20%), to(lightblue));
+  background-image: linear-gradient(to bottom right, blue, 20%, lightblue);
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  padding: 1em;
+}
+
+a {
+  font-size: 2em;
+  color: white;
+}
+/*# sourceMappingURL=mainStyle.css.map */

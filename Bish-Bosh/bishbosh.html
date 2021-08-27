@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bish-Bosh</title>
+        <link rel="stylesheet" href="indexStyle.css">
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header>
+            <h1>Bish-Bosh!</h1>
+            <p>
+                Bish-bosh lists numbers between 0 and what you choose in the Box input slider.
+                <br><br>If the number is divisible by the Bish number <font color="lightblue"><b>'Bish'</b></font> is shown instead of the number.
+                <br><br>If the number is divisible by the Bosh number <font color="pink"><b>'Bosh'</b></font> is shown instead of the number.
+                <br><br>If the number is divisible by both numbers <b>'Bish-Bosh'</b> is shown instead of the number.
+            </p>
+        </header>
+        <div class="bishboshBox">
+            <h1>Box input</h1>
+            <input type="range" id="boxRange" class="boxAmount"
+            min=0 max=1000>
+            <output></output>
+        </div>
+        <div class="Bish-BoshContainer">
+            <div class="bishboshBox">
+                <h1>Bish</h1>
+                
+            <input type="range" id="bish" class="bishRange"
+            min=0 max=100 >
+            <output id="outputBish"></output>
+            </div>
+            <div class="bishboshBox">
+                <h1>Bosh</h1>
+                <input type="range" id="bosh" class="boshRange"
+                min=0 max=100>
+                <output id="outputBosh"></output>
+            </div>
+        </div>
+    </body>
+    
+<script src="Bish-Bosh.js"></script>
+</html>

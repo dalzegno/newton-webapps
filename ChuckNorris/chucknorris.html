@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../mainStyle.css">
+    </head>
+    <body>
+        <div class="joke">
+            <h2 id="joke"></h1>
+        </div>
+        <footer>
+            <a href="http://www.icndb.com/api/">http://www.icndb.com/api/</a>
+        </footer>
+   <script>
+       fetch("http://api.icndb.com/jokes/random")
+       .then((resp)=>resp.json())
+       .then (function(data){
+        document.getElementById('joke').innerHTML=data.value.joke
+       console.log(data)
+        })
+       .catch(function(error){
+        console.log(error);
+       });
+
+   </script>
+    </body>
+</html>

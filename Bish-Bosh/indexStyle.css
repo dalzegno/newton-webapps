@@ -10,9 +10,12 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   background-color: var(--backgroundColor);
   color: var(--fontColor);
-  height: 100%;
+  background-image: repeating-conic-gradient(from 45deg, #090909 0deg 90deg, #000 90deg 180deg);
+  width: 100%;
+  background-size: 10rem 10rem;
 }
 
 header {
