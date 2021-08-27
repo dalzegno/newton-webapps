@@ -1,1 +1,3 @@
-# newton-frontend-BishBosh
+# newton-frontend
+
+Övningar i kursen Utveckling av webbapplikationer
