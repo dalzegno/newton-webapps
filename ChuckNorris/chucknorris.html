@@ -11,7 +11,7 @@
             <a href="http://www.icndb.com/api/">http://www.icndb.com/api/</a>
         </footer>
    <script>
-       fetch("http://api.icndb.com/jokes/random")
+       fetch("https://cors-anywhere.herokuapp.com/http://api.icndb.com/jokes/random")
        .then((resp)=>resp.json())
        .then (function(data){
         document.getElementById('joke').innerHTML=data.value.joke
