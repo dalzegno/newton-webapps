@@ -2,4 +2,4 @@
 
 Övningar i kursen Utveckling av webbapplikationer
 <br>
-https://dalzegno.github.io/newton-frontend/
+https://dalzegno.github.io/newton-webapps/
