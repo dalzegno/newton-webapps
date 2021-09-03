@@ -39,7 +39,7 @@ https://api.sl.se/api2/typeahead.<FORMAT>?key=<DIN NYCKEL>&searchstring=<SÖKORD
       getPlatsUppslag(searchText.value);
    }
 
-   var refresh ="";
+   
    // Väljer station
    stationsUl.onclick = (e) =>{
        let li =document.getElementsByClassName("li")
@@ -54,19 +54,20 @@ https://api.sl.se/api2/typeahead.<FORMAT>?key=<DIN NYCKEL>&searchstring=<SÖKORD
        }
    }
 
+   var refresh ="";
 
    // Söker avgångar
    let btnGetTimeTable = document.getElementById("btnGetTimeTable");
    btnGetTimeTable.onclick =()=>{
-       //Stoppar förra uppdateringen
-       
-       
+     let UlTimeTable = document.getElementById("timeTable")
+        UlTimeTable.innerHTML = "Laddar...";  
 
        getRealTimeInfo(platsId)
        document.getElementById("platsInfo").innerHTML = platsName;
        let id = platsId;
+       //stoppar förra uppdateringen
        if(refresh !== null)
-       clearInterval(refresh);
+        clearInterval(refresh);
        //startar uppdatering varje minut
         refresh = setInterval(() => {
            getRealTimeInfo(id)
@@ -119,6 +120,7 @@ https://api.sl.se/api2/typeahead.<FORMAT>?key=<DIN NYCKEL>&searchstring=<SÖKORD
         }
         )
        .catch(function(error){
+        alert("(Förmodligen) För många API-anrop. Försök igen om en stund :)")
        console.log(error);
        });
    }
@@ -156,6 +158,7 @@ https://api.sl.se/api2/typeahead.<FORMAT>?key=<DIN NYCKEL>&searchstring=<SÖKORD
            appendTimeTable(timeTable)
        })
        .catch(function(error){
+            alert("(Förmodligen) För många API-anrop. Försök igen om en stund :)")
            console.log(error);
           });
    }
