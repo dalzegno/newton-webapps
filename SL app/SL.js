@@ -128,7 +128,7 @@ https://api.sl.se/api2/typeahead.<FORMAT>?key=<DIN NYCKEL>&searchstring=<SÖKORD
         fetch(urlRealTidsInfo)
         .then((resp)=>resp.json())
         .then(function(data){
-            UlTimeTable.innerHTML = "Laddar..."
+            UlTimeTable.innerHTML = "Laddar...";
             _responseData = [];
             _responseData = data.ResponseData;
         }).then(function(){
