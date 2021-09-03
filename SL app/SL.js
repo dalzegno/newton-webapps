@@ -124,12 +124,10 @@ https://api.sl.se/api2/typeahead.<FORMAT>?key=<DIN NYCKEL>&searchstring=<SÖKORD
     // Hämtar tidtabell
     function getRealTimeInfo(platsId){
         
-        let UlTimeTable = document.getElementById("timeTable");
         let urlRealTidsInfo = "https://cors-anywhere.herokuapp.com/https://api.sl.se/api2/realtimedeparturesV4.json?key=6bbc7dca9df1475e936001327f82bbe9&siteid="+platsId+"&timewindow=59"
         fetch(urlRealTidsInfo)
         .then((resp)=>resp.json())
         .then(function(data){
-            UlTimeTable.innerHTML = "Laddar...";
             _responseData = [];
             _responseData = data.ResponseData;
         }).then(function(){
@@ -152,10 +150,11 @@ https://api.sl.se/api2/typeahead.<FORMAT>?key=<DIN NYCKEL>&searchstring=<SÖKORD
             }
         }).then(function(){
             appendTimeTable(timeTable)
+            console.log(timeTable)
         })
         .catch(function(error){
             console.log(error);
-            let UlTimeTable = document.getElementById("timeTable")
+            let UlTimeTable = document.getElementById("timeTable");
             UlTimeTable.innerHTML = error.name + "<br>Välj en station-"+
              "<br>Eller så har det blivit för många API-anrop:)";
            });
