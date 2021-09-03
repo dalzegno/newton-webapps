@@ -39,7 +39,7 @@ https://api.sl.se/api2/typeahead.<FORMAT>?key=<DIN NYCKEL>&searchstring=<SÖKORD
       getPlatsUppslag(searchText.value);
    }
 
-
+   var refresh ="";
    // Väljer station
    stationsUl.onclick = (e) =>{
        let li =document.getElementsByClassName("li")
@@ -58,17 +58,23 @@ https://api.sl.se/api2/typeahead.<FORMAT>?key=<DIN NYCKEL>&searchstring=<SÖKORD
    // Söker avgångar
    let btnGetTimeTable = document.getElementById("btnGetTimeTable");
    btnGetTimeTable.onclick =()=>{
+       //Stoppar förra uppdateringen
+       
+       
+
        getRealTimeInfo(platsId)
        document.getElementById("platsInfo").innerHTML = platsName;
        let id = platsId;
-       
-       setInterval(() => {
+       if(refresh !== null)
+       clearInterval(refresh);
+       //startar uppdatering varje minut
+        refresh = setInterval(() => {
            getRealTimeInfo(id)
            console.log("updated timetable")
-       }, 60*1000);
+       }, 20*1000);
    }
 
-  
+   
    var _responseData = [];
    var timeTable = [];
  
