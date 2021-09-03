@@ -33,6 +33,8 @@ https://api.sl.se/api2/typeahead.<FORMAT>?key=<DIN NYCKEL>&searchstring=<SÖKORD
     let searchText = document.getElementById("placeSearch");
     let btnFindStations = document.getElementById("btnFindStations");
 
+    let UlTimeTable = document.getElementById("timeTable")
+
 
     // Söker stationer
     btnFindStations.onclick=()=>{
@@ -62,6 +64,7 @@ https://api.sl.se/api2/typeahead.<FORMAT>?key=<DIN NYCKEL>&searchstring=<SÖKORD
         let id = platsId;
         
         setInterval(() => {
+            UlTimeTable.innerHTML = "Laddar..."
             getRealTimeInfo(id)
             console.log("updated timetable")
         }, 60*1000);
