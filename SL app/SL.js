@@ -114,8 +114,8 @@ https://api.sl.se/api2/typeahead.<FORMAT>?key=<DIN NYCKEL>&searchstring=<SÖKORD
          }
          )
         .catch(function(error){
+        alert("(Förmodligen) För många API-anrop")
         console.log(error);
-        stationsUl.innerHTML = error.name +"<br>Förmodligen för många API-anrop:)";
         
         });
     }
@@ -128,6 +128,8 @@ https://api.sl.se/api2/typeahead.<FORMAT>?key=<DIN NYCKEL>&searchstring=<SÖKORD
         fetch(urlRealTidsInfo)
         .then((resp)=>resp.json())
         .then(function(data){
+            let UlTimeTable = document.getElementById("timeTable")
+            UlTimeTable.innerHTML = "Laddar...";  
             _responseData = [];
             _responseData = data.ResponseData;
         }).then(function(){
@@ -153,10 +155,8 @@ https://api.sl.se/api2/typeahead.<FORMAT>?key=<DIN NYCKEL>&searchstring=<SÖKORD
             console.log(timeTable)
         })
         .catch(function(error){
+            alert("(Förmodligen) För många API-anrop");
             console.log(error);
-            let UlTimeTable = document.getElementById("timeTable");
-            UlTimeTable.innerHTML = error.name + "<br>Välj en station-"+
-             "<br>Eller så har det blivit för många API-anrop:)";
            });
     }
 
@@ -184,5 +184,5 @@ https://api.sl.se/api2/typeahead.<FORMAT>?key=<DIN NYCKEL>&searchstring=<SÖKORD
             li.className = "departure";
             UlTimeTable.appendChild(li);
             }
-        }
 
+        }
