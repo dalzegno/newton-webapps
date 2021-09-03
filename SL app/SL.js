@@ -156,7 +156,7 @@ https://api.sl.se/api2/typeahead.<FORMAT>?key=<DIN NYCKEL>&searchstring=<SÖKORD
             console.log(error);
             let UlTimeTable = document.getElementById("timeTable")
             UlTimeTable.innerHTML = error.name + "<br>Välj en station-"+
-             "<br>Eller så har det blivit för många API-anrop:)"
+             "<br>Eller så har det blivit för många API-anrop:)";
            });
     }
 
