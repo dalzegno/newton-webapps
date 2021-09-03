@@ -113,6 +113,8 @@ https://api.sl.se/api2/typeahead.<FORMAT>?key=<DIN NYCKEL>&searchstring=<SÖKORD
          )
         .catch(function(error){
         console.log(error);
+        stationsUl.innerHTML = error.name +"<br>Förmodligen för många API-anrop:)";
+        
         });
     }
 
@@ -148,6 +150,9 @@ https://api.sl.se/api2/typeahead.<FORMAT>?key=<DIN NYCKEL>&searchstring=<SÖKORD
         })
         .catch(function(error){
             console.log(error);
+            let UlTimeTable = document.getElementById("timeTable")
+            UlTimeTable.innerHTML = error.name + "<br>Välj en station-"+
+             "<br>Eller så har det blivit för många API-anrop:)"
            });
     }
 
@@ -177,26 +182,3 @@ https://api.sl.se/api2/typeahead.<FORMAT>?key=<DIN NYCKEL>&searchstring=<SÖKORD
             }
         }
 
-
-        
-        let UlTimeTable = document.getElementById("timeTable")
-        destinationMock = [{transportmode: "Buss", linenumber: 17, destination: "Blablabsfdfdsfsdsdfsfdsfdsfdsfdsfdsfdsal", displaytime:"3 min"},{transportmode: "T-bana", linenumber: 17, destination: "Blablabal", displaytime:"3 min"}]
-        
-        for(i=0;i<destinationMock.length;i++){
-            let li = document.createElement("li");
-            let tmode = document.createElement("label");
-            let num = document.createElement("label");
-            let destination = document.createElement("label");
-            let displaytime = document.createElement("label");
-            tmode.innerHTML = destinationMock[i].transportmode;
-            num.innerHTML = destinationMock[i].linenumber;
-            destination.innerHTML = destinationMock[i].destination;
-            displaytime.innerHTML = destinationMock[i].displaytime;
-            li.appendChild(tmode);
-            li.appendChild(num);
-            li.appendChild(destination);
-            li.appendChild(displaytime);
-            li.className = "departure";
-             UlTimeTable.appendChild(li)
-
-        }
