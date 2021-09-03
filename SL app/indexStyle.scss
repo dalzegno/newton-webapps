@@ -1,0 +1,143 @@
+
+:root{
+    --colour1:#F2CAA7;
+    --colour2:#73A2BF;
+    --colour3:#03588C;
+    --colour4:#023059;
+    --colour5:#5D7CA6;
+}
+*{
+    padding:0;
+    margin:0;
+    font-family: 'Comic Sans MS';
+}
+body{
+    height:100%;
+    width:100%;
+    font-size: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--colour4);
+}
+header{
+    color:white;
+}
+.wrapper{
+    width:80%;
+    max-width:50rem;
+    
+}
+#Search{
+    display: flex;
+    flex-direction: row;
+    
+    font-size: clamp(.6rem, 1+2vw, 1rem);
+    width:100%;
+    height:15rem;
+}
+input[type=text]{
+    height:2rem;
+    width:90%;
+}
+button{
+    width:90%;
+    margin-top: .5rem;
+    min-height:2rem
+}
+.searchArea{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:25%;
+    height:100%;
+    background-color: var(--colour2);
+    border-radius: .5rem 0 0 0;
+}
+.stations{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    width:50%;
+    background-color: var(--colour3);
+    #stationsUl{
+        overflow-y: scroll;
+        list-style:none;
+        height:80%;
+        width:80%;
+        background-color: whitesmoke;
+        li{
+            padding:.3rem;
+            cursor:pointer;
+        }
+    #selectedStation{
+        background-color: var(--colour2);
+    }
+    }
+}
+.filters{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width:25%;
+    background-color: var(--colour2);
+    border-radius: 0 .5rem 0 0;
+    
+    input[type=checkbox]{
+        margin-bottom:1rem;
+    }
+    button{
+        width:fit-content;
+    }
+}
+
+#platsInfo{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1rem, 1+3vw, 2rem);
+    background-color: var(--colour3);
+    color:white;
+    min-height:4rem;
+}
+
+#results{
+    display:flex;
+    min-height:25rem;
+    border-radius: 0 0 .5rem .5rem;
+    justify-content: center;
+    background-color: var(--colour5);
+    width:100%;
+    #timeTable{
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        list-style: none;
+        width:100%;
+        height:fit-content;
+        
+        font-size: 1.5rem;
+        .departure{
+            text-align: end;
+            background-color: #0008;
+            color:white;
+            align-items: center;
+            height:3rem;
+            display:grid;
+            grid-template-columns: 1fr 1fr 4fr 1fr;
+            
+            border:1px solid white;
+            text-align: start;
+            *{
+                margin-left: .2rem;
+                overflow:hidden;
+                font-size: clamp(.8rem, 1+2vw, 1.5rem);
+            }
+        }
+    }
+}

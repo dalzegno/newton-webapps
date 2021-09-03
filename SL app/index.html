@@ -1,0 +1,64 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <link rel="stylesheet" href="indexStyle.css">
+    </head>
+    <body>
+        <header>
+            <h1>SL</h1>
+        </header>
+        <div class="wrapper">
+        <section id="Search">       
+            <div class="searchArea">
+                <input id="placeSearch" type="text" placeholder="Ange hållplats">
+                <button id="btnFindStations">Sök hållplats</button>
+            </div>  
+            <div class ="stations">
+                <ul id="stationsUl">
+                </ul>
+            </div>
+            <div class="filters">
+                <label for="endStation">Ändhållplats (valfritt)</label>
+                <input type="text" id="endStation">
+                <label for="bussCheckbox">Buss</label>
+                <input checked="true" id="bussCheckbox" type="checkbox">
+                <label for="tbanaCheckbox">Tunnelbana</label>
+                <input checked="true" id="tbanaCheckbox" type="checkbox">
+                <button id="btnGetTimeTable">Sök avgångar</button>
+            </div>
+        </section>
+        <div id="platsInfo">
+                
+        </div>
+        <section id="results">
+            <ul id="timeTable">
+               <!--  
+                <li>
+                    <div class="departure">
+                        <label class="line">1</label>
+                        <label class="endStation">frihamnen</label>
+                        <label class="minutesLeft">3</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="departure">
+                        <label class="line">1</label>
+                        <label class="endStation">frihamnen</label>
+                        <label class="minutesLeft">3</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="departure">
+                        <label class="line">1</label>
+                        <label class="endStation">frihamnen</label>
+                        <label class="minutesLeft">3</label>
+                    </div>
+                </li>
+ -->
+            </ul>
+        </section>
+
+    </div>
+    </body>
+    <script src="SL.js"></script>
+</html>
