@@ -18,7 +18,7 @@ https://api.sl.se/api2/typeahead.<FORMAT>?key=<DIN NYCKEL>&searchstring=<SÖKORD
  
     */
    // let urlPlatsUppslag = "https://cors-anywhere.herokuapp.com/https://api.sl.se/api2/typeahead.json?key=705b323a639c43e8b11a4b3268f02f80&searchstring=<placeSearch>&stationsonly=true&maxresults=10"
-    let platsId = 9192;
+    var platsId;
     let platsName = "";
    // let urlRealTidsInfo = "https://cors-anywhere.herokuapp.com/https://api.sl.se/api2/realtimedeparturesV4.json?key=6bbc7dca9df1475e936001327f82bbe9&siteid="+platsId+"&timewindow=20"
     
@@ -64,10 +64,10 @@ https://api.sl.se/api2/typeahead.<FORMAT>?key=<DIN NYCKEL>&searchstring=<SÖKORD
         let id = platsId;
         
         setInterval(() => {
-            UlTimeTable.innerHTML = "Laddar..."
+            
             getRealTimeInfo(id)
             console.log("updated timetable")
-        }, 60*1000);
+        }, 30*1000);
     }
 
    
@@ -128,6 +128,7 @@ https://api.sl.se/api2/typeahead.<FORMAT>?key=<DIN NYCKEL>&searchstring=<SÖKORD
         fetch(urlRealTidsInfo)
         .then((resp)=>resp.json())
         .then(function(data){
+            UlTimeTable.innerHTML = "Laddar..."
             _responseData = [];
             _responseData = data.ResponseData;
         }).then(function(){
